@@ -43,3 +43,17 @@ The app allows users to enter battery and charging parameters through an interac
 ```bash
 git clone https://github.com/yourusername/ev-battery-predictor.git
 cd ev-battery-predictor
+```
+
+2. Install dependencies:
+```bash
+pip install streamlit pandas scikit-learn joblib
+```
+
+3. Usage:
+```bash
+streamlit run app.py
+```
+Open the link displayed in your browser.
+Use the sidebar to input battery and charging parameters.
+Click Predict to see the predicted outputs.
