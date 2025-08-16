@@ -45,9 +45,17 @@ input_df = pd.DataFrame([[
 ])
 
 # Predict button
+import time
 if st.button("Predict"):
-    prediction = model.predict(input_df)
+    # Show a spinner while prediction is happening
+    with st.spinner('Predicting... 🔄 Please wait'):
+        time.sleep(3)
+        prediction = model.predict(input_df)
+
+    # Display results after prediction
+    st.success("Prediction completed! ✅")
     st.subheader("Predicted Outputs")
     st.write(f"Charging Duration (min): {prediction[0][0]:.2f}")
     st.write(f"Efficiency (%): {prediction[0][1]:.2f}")
     st.write(f"Degradation Rate (%): {prediction[0][2]:.2f}")
+
